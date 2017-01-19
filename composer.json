@@ -1,8 +1,8 @@
 {
-    "name": "derekisbusy/yii2-rbac",
-    "description": "Yii2 RBAC",
+    "name": "derekisbusy/yii2-rbactree",
+    "description": "Yii2 RBAC Tree",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension"],
+    "keywords": ["yii2","extension","rbac","tree"],
     "license": "BSD-3-Clause",
     "authors": [
         {
