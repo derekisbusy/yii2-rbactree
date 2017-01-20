@@ -2,7 +2,7 @@
 
 namespace derekisbusy\rbactree\models;
 
-use \derekisbusy\rbac\models\base\AuthItem as BaseAuthItem;
+use \derekisbusy\rbactree\models\base\AuthItem as BaseAuthItem;
 
 /**
  * This is the model class for table "auth_item".

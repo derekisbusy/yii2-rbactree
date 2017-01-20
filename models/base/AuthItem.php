@@ -3,6 +3,7 @@
 namespace derekisbusy\rbactree\models\base;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the base model class for table "{{%auth_item}}".
@@ -101,5 +102,27 @@ class AuthItem extends  \kartik\tree\models\Tree
     public static function find()
     {
         return new \derekisbusy\rbac\models\AuthItemQuery(get_called_class());
+    }
+    
+    
+    /**
+     * @inheritdoc
+     * @return array mixed
+     */ 
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => 'updated_at',
+                'value' => new \yii\db\Expression('NOW()'),
+            ],
+//            'blameable' => [
+//                'class' => BlameableBehavior::className(),
+//                'createdByAttribute' => 'created_by',
+//                'updatedByAttribute' => 'updated_by',
+//            ],
+        ];
     }
 }
