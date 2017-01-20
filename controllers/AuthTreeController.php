@@ -1,9 +1,9 @@
 <?php
 
-namespace derekisbusy\rbac\controllers;
+namespace derekisbusy\rbactree\controllers;
 
 use Yii;
-use derekisbusy\rbac\models\TblProduct;
+use derekisbusy\rbactree\models\AuthItem;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

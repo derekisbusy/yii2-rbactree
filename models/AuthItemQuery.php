@@ -1,6 +1,6 @@
 <?php
 
-namespace derekisbusy\rbac\models;
+namespace derekisbusy\rbactree\models;
 
 /**
  * This is the ActiveQuery class for [[AuthItem]].

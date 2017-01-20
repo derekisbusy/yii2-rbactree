@@ -1,6 +1,6 @@
 <?php
 
-namespace derekisbusy\rbac\models\base;
+namespace derekisbusy\rbactree\models\base;
 
 use Yii;
 
@@ -25,14 +25,14 @@ use Yii;
  * @property integer $selected
  * @property integer $disabled
  * @property integer $readonly
- * @property integer $vidible
+ * @property integer $visible
  * @property integer $collapsed
  * @property integer $movable_u
  * @property integer $movable_d
  * @property integer $movable_l
  * @property integer $movable_r
- * @property integer $removeable
- * @property integer $removeable_all
+ * @property integer $removable
+ * @property integer $removable_all
  */
 class AuthItem extends  \kartik\tree\models\Tree
 {
@@ -44,8 +44,8 @@ class AuthItem extends  \kartik\tree\models\Tree
     public function rules()
     {
         return [
-            [['root', 'lft', 'rgt', 'lvl', 'active', 'type', 'created_at', 'updated_at', 'icon_type', 'selected', 'disabled', 'readonly', 'vidible', 'collapsed', 'movable_u', 'movable_d', 'movable_l', 'movable_r', 'removeable', 'removeable_all'], 'integer'],
-            [['lft', 'rgt', 'lvl', 'active', 'name', 'type', 'icon', 'removeable_all'], 'required'],
+            [['root', 'lft', 'rgt', 'lvl', 'active', 'type', 'created_at', 'updated_at', 'icon_type', 'selected', 'disabled', 'readonly', 'visible', 'collapsed', 'movable_u', 'movable_d', 'movable_l', 'movable_r', 'removable', 'removable_all'], 'integer'],
+            [[ 'active', 'name',  'icon', 'removable_all'], 'required'],//'type','lft', 'rgt', 'lvl',
             [['description', 'data'], 'string'],
             [['name'], 'string', 'max' => 60],
             [['rule_name'], 'string', 'max' => 64],
@@ -83,14 +83,14 @@ class AuthItem extends  \kartik\tree\models\Tree
             'selected' => Yii::t('rbac', 'Selected'),
             'disabled' => Yii::t('rbac', 'Disabled'),
             'readonly' => Yii::t('rbac', 'Readonly'),
-            'vidible' => Yii::t('rbac', 'Vidible'),
+            'visible' => Yii::t('rbac', 'Visible'),
             'collapsed' => Yii::t('rbac', 'Collapsed'),
             'movable_u' => Yii::t('rbac', 'Movable U'),
             'movable_d' => Yii::t('rbac', 'Movable D'),
             'movable_l' => Yii::t('rbac', 'Movable L'),
             'movable_r' => Yii::t('rbac', 'Movable R'),
-            'removeable' => Yii::t('rbac', 'Removeable'),
-            'removeable_all' => Yii::t('rbac', 'Removeable All'),
+            'removable' => Yii::t('rbac', 'Removable'),
+            'removable_all' => Yii::t('rbac', 'Removable All'),
         ];
     }
 

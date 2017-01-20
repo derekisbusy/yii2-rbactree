@@ -1,6 +1,6 @@
 <?php
 
-namespace derekisbusy\rbac\models;
+namespace derekisbusy\rbactree\models;
 
 use \derekisbusy\rbac\models\base\AuthItem as BaseAuthItem;
 
@@ -16,8 +16,8 @@ class AuthItem extends BaseAuthItem
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['root', 'lft', 'rgt', 'lvl', 'active', 'type', 'created_at', 'updated_at', 'icon_type', 'selected', 'disabled', 'readonly', 'vidible', 'collapsed', 'movable_u', 'movable_d', 'movable_l', 'movable_r', 'removeable', 'removeable_all'], 'integer'],
-            [['lft', 'rgt', 'lvl', 'active', 'name', 'type', 'icon', 'removeable_all'], 'required'],
+            [['root', 'lft', 'rgt', 'lvl', 'active', 'type', 'created_at', 'updated_at', 'icon_type', 'selected', 'disabled', 'readonly', 'visible', 'collapsed', 'movable_u', 'movable_d', 'movable_l', 'movable_r', 'removable', 'removable_all'], 'integer'],
+            [['lft', 'rgt', 'lvl', 'active', 'name', 'type', 'icon', 'removable_all'], 'required'],
             [['description', 'data'], 'string'],
             [['name'], 'string', 'max' => 60],
             [['rule_name'], 'string', 'max' => 64],
